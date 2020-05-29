@@ -1,6 +1,6 @@
 # Image Filter
 
-## A command-line tool made in C
+## A command-line tool made in C that apply filters in images bitmap
 
 ### Sepia Filter
 ![](images/gif/Sepia.gif)
