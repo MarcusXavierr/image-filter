@@ -12,14 +12,9 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         {
             pixel = image[i][j];
             average = floor((pixel.rgbtBlue + pixel.rgbtRed + pixel.rgbtGreen)/3);
-            printf("Before: Average: %i ,blue: %i,green: %i,red: %i\n", average, pixel.rgbtBlue, pixel.rgbtGreen, pixel.rgbtRed);
             image[i][j].rgbtBlue = average;
             image[i][j].rgbtRed = average;
             image[i][j].rgbtGreen = average;
-            printf("After: Average: %i ,blue: %i,green: %i,red: %i\n", average, pixel.rgbtBlue, pixel.rgbtGreen, pixel.rgbtRed);
-
-           
-
         }
     }
 
@@ -29,6 +24,13 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
+    for(int i = 0; i < height; i++)
+    {
+        for(int j = 0; j < width; j++)
+        {
+
+        }
+    }
     return;
 }
 
