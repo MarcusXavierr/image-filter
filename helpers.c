@@ -42,19 +42,19 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
                 (0.393 * red) + (0.769 * green) + (0.189 * blue)
             ); 
 
-            image[i][j].rgbtRed = result > 255 ? 255:floor((0.393 * red) + (0.769 * green) + (0.189 * blue));
+            image[i][j].rgbtRed = result > 255 ? 255:result;
             
             result = floor(//Green
                 (0.349 * red) + (0.686 * green) + (0.168 * blue)
             );
 
-            image[i][j].rgbtGreen = result > 255 ? 255:floor((0.349 * red) + (0.686 * green) + (0.168 * blue));
+            image[i][j].rgbtGreen = result > 255 ? 255:result;
             
             result = floor(//Blue
                 (0.272 * red) + (0.534 * green) + (0.131 * blue)
             );
 
-            image[i][j].rgbtBlue = result > 255 ? 255:floor((0.272 * red) + (0.534 * green) + (0.131 * blue));
+            image[i][j].rgbtBlue = result > 255 ? 255:result;
             
         }
     }
