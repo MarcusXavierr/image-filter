@@ -309,7 +309,41 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
                 else //between
                 {
-                    
+                    average = ( //Red
+                    image[i - 1][j].rgbtRed + 
+                    image[i - 1][j + 1].rgbtRed + 
+                    image[i][j + 1].rgbtRed + 
+                    image[i + 1][j + 1].rgbtRed + 
+                    image[i + 1][j].rgbtRed + 
+                    image[i + 1][j - 1].rgbtRed + 
+                    image[i][j - 1].rgbtRed + 
+                    image[i - 1][j - 1].rgbtRed + 
+                    pixel.rgbtRed)/9;
+                    totalimage[i][j].rgbtRed = average;
+
+                    average = ( //Green
+                    image[i - 1][j].rgbtGreen + 
+                    image[i - 1][j + 1].rgbtGreen + 
+                    image[i][j + 1].rgbtGreen + 
+                    image[i + 1][j + 1].rgbtGreen + 
+                    image[i + 1][j].rgbtGreen + 
+                    image[i + 1][j - 1].rgbtGreen + 
+                    image[i][j - 1].rgbtGreen + 
+                    image[i - 1][j - 1].rgbtGreen + 
+                    pixel.rgbtGreen)/9;
+                    totalimage[i][j].rgbtGreen = average;
+
+                    average = ( //Blue
+                    image[i - 1][j].rgbtBlue + 
+                    image[i - 1][j + 1].rgbtBlue + 
+                    image[i][j + 1].rgbtBlue + 
+                    image[i + 1][j + 1].rgbtBlue + 
+                    image[i + 1][j].rgbtBlue + 
+                    image[i + 1][j - 1].rgbtBlue + 
+                    image[i][j - 1].rgbtBlue + 
+                    image[i - 1][j - 1].rgbtBlue + 
+                    pixel.rgbtBlue)/9;
+                    totalimage[i][j].rgbtBlue = average;
                 }
                 
             }
