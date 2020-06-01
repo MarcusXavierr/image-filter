@@ -82,5 +82,139 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE totalimage[height][width];
+    int average;
+    RGBTRIPLE pixel;
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            pixel = image[i][j];
+            if (i == 0) //top
+            {
+                if (j == 0) //left
+                {
+                    average = ( //Red
+                    image[i][j + 1].rgbtRed + 
+                    image[i + 1][j].rgbtRed + 
+                    image[i + 1][j + 1].rgbtRed + 
+                    pixel.rgbtRed)/4;
+                    totalimage[i][j].rgbtRed = average;
+
+                    average = ( //Green
+                    image[i][j + 1].rgbtGreen + 
+                    image[i + 1][j].rgbtGreen + 
+                    image[i + 1][j + 1].rgbtGreen + 
+                    pixel.rgbtGreen)/4;
+                    totalimage[i][j].rgbtGreen = average;
+
+                    average = ( //Blue
+                    image[i][j + 1].rgbtBlue + 
+                    image[i + 1][j].rgbtBlue + 
+                    image[i + 1][j + 1].rgbtBlue + 
+                    pixel.rgbtBlue)/4;
+                    totalimage[i][j].rgbtBlue = average;
+                }
+                else if(j == width - 1)//right
+                {
+                    average = ( //Red
+                    image[i][j - 1].rgbtRed + 
+                    image[i + 1][j].rgbtRed + 
+                    image[i + 1][j - 1].rgbtRed + 
+                    pixel.rgbtRed)/4;
+                    totalimage[i][j].rgbtRed = average;
+
+                    average = ( //Green
+                    image[i][j - 1].rgbtGreen + 
+                    image[i + 1][j].rgbtGreen + 
+                    image[i + 1][j - 1].rgbtGreen + 
+                    pixel.rgbtGreen)/4;
+                    totalimage[i][j].rgbtGreen = average;
+
+                    average = ( //Blue
+                    image[i][j - 1].rgbtBlue + 
+                    image[i + 1][j].rgbtBlue + 
+                    image[i + 1][j - 1].rgbtBlue + 
+                    pixel.rgbtBlue)/4;
+                    totalimage[i][j].rgbtBlue = average;
+                }
+                else //between
+                {
+
+                }
+                
+            }
+            else if (i == height -1) //bottom
+            {
+                if (j == 0) //left
+                {
+                    average = ( //Red
+                    image[i][j + 1].rgbtRed + 
+                    image[i - 1][j].rgbtRed + 
+                    image[i - 1][j + 1].rgbtRed + 
+                    pixel.rgbtRed)/4;
+                    totalimage[i][j].rgbtRed = average;
+
+                    average = ( //Green
+                    image[i][j + 1].rgbtGreen + 
+                    image[i - 1][j].rgbtGreen + 
+                    image[i - 1][j + 1].rgbtGreen + 
+                    pixel.rgbtGreen)/4;
+                    totalimage[i][j].rgbtGreen = average;
+
+                    average = ( //Blue
+                    image[i][j + 1].rgbtBlue + 
+                    image[i - 1][j].rgbtBlue + 
+                    image[i - 1][j + 1].rgbtBlue + 
+                    pixel.rgbtBlue)/4;
+                    totalimage[i][j].rgbtBlue = average;
+                }
+                else if(j == width - 1) //right
+                {
+                    average = ( //Red
+                    image[i][j - 1].rgbtRed + 
+                    image[i - 1][j].rgbtRed + 
+                    image[i - 1][j - 1].rgbtRed + 
+                    pixel.rgbtRed)/4;
+                    totalimage[i][j].rgbtRed = average;
+
+                    average = ( //Green
+                    image[i][j - 1].rgbtGreen + 
+                    image[i - 1][j].rgbtGreen + 
+                    image[i - 1][j - 1].rgbtGreen + 
+                    pixel.rgbtGreen)/4;
+                    totalimage[i][j].rgbtGreen = average;
+
+                    average = ( //Blue
+                    image[i][j - 1].rgbtBlue + 
+                    image[i - 1][j].rgbtBlue + 
+                    image[i - 1][j - 1].rgbtBlue + 
+                    pixel.rgbtBlue)/4;
+                    totalimage[i][j].rgbtBlue = average;
+                }
+                else //between
+                {
+                    
+                }
+            }
+            else //between
+            {
+                if (j == 0) //left
+                {
+
+                }
+                else if(j == width - 1) //right
+                {
+
+                }
+                else //between
+                {
+                    
+                }
+                
+            }
+            
+        }
+    }
     return;
 }
